@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+
+    <style>
+
+
+        
+    </style>
+</head>
+<body>
+    <h1>Student</h1>
+    <hr>
+    <p>id:{{id}}</p>
+    <p>name:{{name}}</p>
+    <p>Subject:{{subject}}</p>
+
+    <a href="{% url 'teacher'%}">Click here </a>
+
+    {% if id %}
+    <p>If block execute</p>
+    {% else%}
+    <p>Block</p>
+    {% endif %}
+
+    <hr>
+<ul>
+    {% for subject in subjects %}
+   
+{% if forloop.first %}
+
+       <li style="color:blue"><b> {{subject}} </b></li>
+{% else %}
+
+<li style="color:red"><b> {{subject}} </b></li>
+{% endif %}
+
+       <ul>
+        <li><i>counter:{{forloop.counter}}</i></li>
+        <li><i>counter0:{{forloop.counter0}}</i></li>
+        <li><i>revcounter:{{forloop.revcounter}}</i></li>
+        <li><i>revcounter0:{{forloop.revcounter0}}</i></li>
+        <li><i>first:{{forloop.first}}</i></li>
+        <li><i>last:{{forloop.last}}</i></li>
+
+        
+
+
+
+
+       </ul>
+
+    {% endfor %}
+</ul>
+
+</body>
+</html>

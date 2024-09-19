@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+<body>
+    <p>id:{{id}}</p>
+    <p>name:{{name}}</p>
+    <p>deptartment:{{dept}}</p>
+    <p>skills:{{skills}}</p>
+
+    <a href="{% url 'home'%}">Click here to go home page</a>
+
+<hr>
+
+<ul>
+    {% for skill in skills %}
+   
+       <li>{{skill}}</li>
+
+    {% endfor %}
+</ul>
+
+<hr>
+<ul>
+    {% for skill in skills %}
+   
+{% if forloop.first %}
+
+       <li><b> {{skill}} </b></li>
+{% else %}
+
+<li><b> {{skill}} </b></li>
+{% endif %}
+
+       <ul>
+        <li><i>counter:{{forloop.counter}}</i></li>
+        <li><i>counter0:{{forloop.counter0}}</i></li>
+        <li><i>revcounter:{{forloop.revcounter}}</i></li>
+        <li><i>revcounter0:{{forloop.revcounter0}}</i></li>
+        <li><i>first:{{forloop.first}}</i></li>
+        <li><i>last:{{forloop.last}}</i></li>
+
+        
+
+
+
+
+       </ul>
+
+    {% endfor %}
+</ul>
+
+</body>
+</html>

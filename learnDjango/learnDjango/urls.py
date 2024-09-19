@@ -20,11 +20,20 @@ from firstapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about-page/',views.about),
-    path('',views.home),
+    path('',views.home,name='home'),
     path('about-cart/',views.addcart),
     path('about-contact/',views.contact),
     path('courses/',views.courses),
     path('fees/',views.fees),
-    path('teacher/',views.teacher),
+    path('teacher/',views.teacher,name='teacher'),
+    path('students/',views.students,),
+    path('employee/',views.employee),
+    path('book/',views.book),
+    path('product/',views.product),
+    path('customer/',views.customer),
+    
+
+
+
 
 ]
