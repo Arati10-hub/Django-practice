@@ -38,7 +38,7 @@ def book(request):
     context={"bookname":request.GET.get("bookname"),
              "price":request.GET.get("price")}
     return render(request,"book.html",context)
-
+#Get method
 def product(request):
     print(request.GET.get("productname"))
     print(request.GET.get("price"))
@@ -51,5 +51,14 @@ def employee(request):
     context={"id":101,"name":"arti","dept":"IT","skills":["python","sql","html","CSS","Js"]}
     return render(request,"employee.html",context)
 
+#post method
+
 def customer(request):
-    return render(request,"customer.html")
+    if request.method=='GET':
+        return render(request,"customer.html")
+    if request.method=='POST':
+        customername=request.POST.get("customername")
+        productname=request.POST.get("productname")
+        
+    return render(request,"customer.html",{"custname":customername,"product":productname})
+
