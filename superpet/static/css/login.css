@@ -1,0 +1,13 @@
+h1{
+    color: blue;
+}
+
+button{
+    color: white;
+    background:rgb(15, 15, 139);
+}
+
+button:hover{
+background-color: green;
+
+}
