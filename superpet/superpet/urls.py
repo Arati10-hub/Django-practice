@@ -19,6 +19,8 @@ from django.urls import path,include
 from . import views
 # adding urls.py from products application...for select path of roduct application & the add path in urlpattens below
 from products import urls
+from django.conf.urls.static import static
+from . import settings
 
 
 # .  means same package
@@ -33,3 +35,5 @@ urlpatterns = [
     path('products/',include('products.urls')),
     
 ]
+
+urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
