@@ -10,6 +10,18 @@ products
 {% block content %} 
 
 <h1>New Arrive Products </h1>
+<div class="row row-cols-1 row-cols-md-2 g-4">
 
+    {% for product in products %}
+
+    {% with username="Dog" %}
+
+<!-- we can use with for extra data  -->
+       {% include 'card.html' with p=product only %}  
+       {% endwith %}
+
+    {% endfor %}
+
+</div>
 
 {% endblock %}
